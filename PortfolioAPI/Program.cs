@@ -1,6 +1,10 @@
+using PortfolioAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddSingleton<TokenStore>();
+builder.Services.AddSingleton<KiteService>();
 
 builder.Services.AddCors(options =>
 {
